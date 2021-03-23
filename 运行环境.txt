@@ -1,0 +1,19 @@
+环境：
+ipython                  5.5.0                    
+Keras                    2.4.3               
+lightgbm                 2.2.3           
+notebook                 5.3.1              
+numpy                    1.18.5                       
+pandas                   1.0.5                 
+Pillow                   7.0.0          
+pip                      19.3.1         
+scikit-learn             0.22.2.post1     
+seaborn                  0.10.1             
+sklearn                  0.0                   
+tensorflow               2.3.0               
+tqdm                     4.41.1         
+albumentations
+imblearn 
+scipy
+matplotlib
+IPython
