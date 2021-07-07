@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder#标签编码
 from sklearn.model_selection import train_test_split
 import seaborn as sns
 import matplotlib.pyplot as plt
-from scipy.stats import entropy
+from scipy.stats import entropy, skew, kurtosis
 import numpy as np
 import gc  
 import os 

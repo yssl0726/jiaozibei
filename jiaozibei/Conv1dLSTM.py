@@ -35,11 +35,11 @@ sub_path = '/content/drive/My Drive/kesci_JZB/Baseline/sub/'
 
 def acc_combo(y, y_pred, mode):
     # 数值ID与行为编码的对应关系
-  mapping = {0: 'A_0', 1: 'A_1', 2: 'A_2', 3: 'A_3', 4: 'D_4', 5: 'A_5', 6: 'B_1',7: 'B_5', 
-          8: 'B_2', 9: 'B_3', 10: 'B_0', 11: 'A_6', 12: 'C_1', 13: 'C_3', 14: 'C_0', # 递手机
-          15: 'B_6', 16: 'C_2', 17: 'C_5', 18: 'C_6' }
-  if mode == 'behavior':  # 场景+动作
-    code_y, code_y_pred = mapping[y], mapping[y_pred] 
+    mapping = {0: 'A_0', 1: 'A_1', 2: 'A_2', 3: 'A_3', 4: 'D_4', 5: 'A_5', 6: 'B_1',7: 'B_5',
+                8: 'B_2', 9: 'B_3', 10: 'B_0', 11: 'A_6', 12: 'C_1', 13: 'C_3', 14: 'C_0', # 递手机
+                15: 'B_6', 16: 'C_2', 17: 'C_5', 18: 'C_6' }
+    if mode == 'behavior':  # 场景+动作
+    code_y, code_y_pred = mapping[y], mapping[y_pred]
     if code_y == code_y_pred: # 编码完全相同得分1.0 即 C_0 == C_0
       return 1.0
     elif code_y.split("_")[0] == code_y_pred.split("_")[0]: # 场景相同得 1.0/7 分
@@ -47,7 +47,7 @@ def acc_combo(y, y_pred, mode):
     elif code_y.split("_")[1] == code_y_pred.split("_")[1]: # 动作相同得 1.0/3 分
       return 1.0/3
     else: # 都不对，不得分
-      return 0.0 
+      return 0.0
 
   # if mode == 'scene':  # 最高得到7500/7 = 1071分  0.78左右
   #     mapping_scene = {0: 'A', 1: 'B', 2: 'C', 3: 'D'}
@@ -176,7 +176,7 @@ def get_acc_combo():
 
 
 
-epochs = 1
+epochs = 100
 batch_size = 120
 # 尝试：以128为分界线，向下（*0.5）和向上（*2）训练后比较测试结果，若向下更好则再*0.5，直接结果不再提升
 # batchsize设置：通常10到100，一般设置为2的n次方。原因：计算机的gpu和cpu的memory都是2进制方式存储的，设置2的n次方可以加快计算速度。
@@ -218,7 +218,7 @@ def Net():
   model = CuDNNLSTM(180)(model)
   # model = CuDNNGRU(150, return_sequences=True)(model) # (None,180)
   # model = attention_3d_block(model)
-
+LSTM
 
   ## 双向lstm + attention
   # model = Bidirectional(LSTM(180, return_sequences=True))(model)  # 默认激活函数为tanh

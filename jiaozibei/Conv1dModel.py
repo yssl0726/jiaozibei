@@ -272,16 +272,16 @@ def get_train_test_data(use_scaler=True, shuffle=True, pseudo_labels_file=None):
 
 
 def BLOCK(seq, filters, kernal_size):
-    cnn = keras.layers.Conv1D(filters, 1, padding='SAME', activation='relu')(seq)
+    cnn = keras.layers.Conv1D(filters, padding='SAME', activation='relu')(seq)
     cnn = keras.layers.LayerNormalization()(cnn)
 
     cnn = keras.layers.Conv1D(filters, kernal_size, padding='SAME', activation='relu')(cnn)
     cnn = keras.layers.LayerNormalization()(cnn)
 
-    cnn = keras.layers.Conv1D(filters, 1, padding='SAME', activation='relu')(cnn)
+    cnn = keras.layers.Conv1D(filters, padding='SAME', activation='relu')(cnn)
     cnn = keras.layers.LayerNormalization()(cnn)
 
-    seq = keras.layers.Conv1D(filters, 1)(seq)
+    seq = keras.layers.Conv1D(filters)(seq)
     seq = keras.layers.Add()([seq, cnn])
     return seq
 
