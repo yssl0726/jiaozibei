@@ -2,10 +2,15 @@
 比赛地址：https://www.kesci.com/home/competition/5ece30cc73a1b3002c9f1bf5/content/2
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 团队名字：渣渣炼丹师
 
 data：数据集。
 model：为训练时产生的模型放到这个文件夹里面。
+=======
+data：数据集。  
+model：为训练时产生的模型放到这个文件夹里面。  
+>>>>>>> b29a140f3522ee7c1dd0b07f6a022c0b2d418577
 =======
 data：数据集。  
 model：为训练时产生的模型放到这个文件夹里面。  
